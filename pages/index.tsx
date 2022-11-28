@@ -1,11 +1,9 @@
 import Head from "next/head";
-import { useProducts } from "../hooks/useProducts";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { Herosection } from "../components/Herosection";
 
 export default function Home() {
-  const products = useProducts();
-
-  const productNames = products.map((product) => product.name);
-
   return (
     <div>
       <Head>
@@ -13,11 +11,13 @@ export default function Home() {
         <meta name="description" content="Audio gear by audiophile" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p>
-        {productNames.map((productName: string) => {
-          return <li key={productName}>{productName}</li>;
-        })}
-      </p>
+      <Header />
+      <main className="h-screen">
+        <div className="px-40 h-fit bg-almost-black flex justify-center">
+          <Herosection />
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }
