@@ -1,22 +1,67 @@
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import cart from "../assets/shared/desktop/icon-cart.svg";
+import hamburgerMenu from "../assets/shared/tablet/icon-hamburger.svg";
+import Link from "next/link";
+import { useReducer } from "react";
+import { DialogComponent } from "./DialogComponent";
+import { headerReducer } from "../utils/headerReducer";
 
-export const Header = () => (
-  <div className="bg-almost-black">
-    <div className="pt-8 text-white m-auto flex justify-between max-w-screen-xl w-full items-center border-b-gray-700 border-b pb-9">
-      <button>
-        <Image src={logo} alt="" width={143} height={25} />
-      </button>
-      <div className="flex gap-9">
-        <button className="sub-title tracking-[2px]">Home</button>
-        <button className="sub-title tracking-[2px]">Headphones</button>
-        <button className="sub-title tracking-[2px]">Speakers</button>
-        <button className="sub-title tracking-[2px]">Earphones</button>
+export const Header = () => {
+  const [{ isMenuOpen, isCartOpen }, dispatch] = useReducer(headerReducer, {
+    isMenuOpen: false,
+    isCartOpen: false,
+  });
+
+  return (
+    <>
+      <div className="bg-almost-black px-6 sm:px-10">
+        <div className="m-auto flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 text-white sm:h-24">
+          <button
+            className="md:hidden"
+            onClick={() => dispatch({ type: "openMenu" })}
+          >
+            <Image src={hamburgerMenu} alt="" />
+          </button>
+
+          <Link href="/" className="sm:justify-self-start sm:max-md:flex-1">
+            <Image src={logo} alt="" width={143} height={25} />
+          </Link>
+
+          <div className="hidden gap-9 md:flex">
+            <button className="sub-title tracking-[2px]">
+              <Link href="/">Home</Link>
+            </button>
+            <button className="sub-title tracking-[2px]">
+              <Link href="/category/headphones">Headphones</Link>
+            </button>
+            <button className="sub-title tracking-[2px]">
+              <Link href="/category/speakers">Speakers</Link>
+            </button>
+            <button className="sub-title tracking-[2px]">
+              <Link href="/category/earphones">Earphones</Link>
+            </button>
+          </div>
+
+          <button onClick={() => dispatch({ type: "openCart" })}>
+            <Image src={cart} alt="" width={23} height={20} />
+          </button>
+        </div>
       </div>
-      <button>
-        <Image src={cart} alt="" width={23} height={20} />
-      </button>
-    </div>
-  </div>
-);
+      <DialogComponent
+        open={isMenuOpen}
+        onClose={() => dispatch({ type: "close" })}
+        className="w-full rounded-b-md md:hidden"
+      >
+        <p>Category</p>
+      </DialogComponent>
+      <DialogComponent
+        open={isCartOpen}
+        onClose={() => dispatch({ type: "close" })}
+        className="my-8 w-fit rounded-md"
+      >
+        <p>Cart</p>
+      </DialogComponent>
+    </>
+  );
+};
