@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { Herosection } from "../components/Herosection";
 
 export default function Home() {
   return (
@@ -13,11 +11,11 @@ export default function Home() {
       </Head>
       <Header />
       <main className="h-screen">
-        <div className="px-40 h-fit bg-almost-black flex justify-center">
-          <Herosection />
+        <div className="flex h-fit justify-center bg-almost-black px-40">
+          {/*<Herosection />*/}
         </div>
       </main>
-      <Footer />
+      {/*<Footer />*/}
     </div>
   );
 }
