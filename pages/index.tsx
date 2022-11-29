@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="h-screen">
+      <main className="h-full">
         <div className="flex h-fit justify-center bg-almost-black px-40">
           {/*<Herosection />*/}
         </div>
