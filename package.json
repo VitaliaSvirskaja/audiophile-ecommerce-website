@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "cypress open"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "cypress": "^11.2.0",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "prettier-plugin-tailwindcss": "^0.2.0",
