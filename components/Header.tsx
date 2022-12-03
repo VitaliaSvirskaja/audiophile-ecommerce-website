@@ -48,22 +48,23 @@ export const Header = () => (
         <Popover.Button className="focus-ring p-2" aria-label="cart">
           <Image src={cart} alt="" width={23} height={20} />
         </Popover.Button>
-
-        <Transition
-          className="absolute top-16 right-6 sm:top-20 sm:right-10"
-          enter="transition duration-100 ease-out"
-          enterFrom="transform scale-95 opacity-0"
-          enterTo="transform scale-100 opacity-100"
-          leave="transition duration-75 ease-out"
-          leaveFrom="transform scale-100 opacity-100"
-          leaveTo="transform scale-95 opacity-0"
-        >
-          <Popover.Panel>
-            <div className="rounded bg-white p-5 text-black shadow-md">
-              Cart
-            </div>
-          </Popover.Panel>
-        </Transition>
+        <div className="relative max-w-screen-xl">
+          <Transition
+            className="absolute top-2 right-0 z-10 sm:top-4"
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+          >
+            <Popover.Panel>
+              <div className="rounded bg-white p-5 text-black shadow-md">
+                Cart
+              </div>
+            </Popover.Panel>
+          </Transition>
+        </div>
       </Popover>
     </div>
   </div>
