@@ -29,24 +29,20 @@ export const Header = () => (
         </Transition>
       </Popover>
 
-          <Link href="/" className="sm:justify-self-start sm:max-md:flex-1">
-            <Image src={logo} alt="" width={143} height={25} />
-          </Link>
+      <Link
+        href="/"
+        className="focus-ring p-2 sm:justify-self-start sm:max-md:flex-1"
+        title="Navigate to home"
+      >
+        <Image src={logo} alt="" width={143} height={25} />
+      </Link>
 
-          <div className="hidden gap-9 md:flex">
-            <button className="sub-title tracking-[2px]">
-              <Link href="/">Home</Link>
-            </button>
-            <button className="sub-title tracking-[2px]">
-              <Link href="/category/headphones">Headphones</Link>
-            </button>
-            <button className="sub-title tracking-[2px]">
-              <Link href="/category/speakers">Speakers</Link>
-            </button>
-            <button className="sub-title tracking-[2px]">
-              <Link href="/category/earphones">Earphones</Link>
-            </button>
-          </div>
+      <nav className="hidden gap-8 lg:flex">
+        <NavLink text="Home" href="/" />
+        <NavLink text="Headphones" href="/category/headphones" />
+        <NavLink text="Speakers" href="/category/speakers" />
+        <NavLink text="Earphones" href="/category/earphones" />
+      </nav>
 
       <Popover>
         <Popover.Button className="focus-ring p-2" aria-label="cart">
