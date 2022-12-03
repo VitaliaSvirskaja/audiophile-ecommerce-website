@@ -1,3 +1,5 @@
+export {};
+
 describe("header", () => {
   beforeEach(() => {
     cy.viewport("macbook-15");
