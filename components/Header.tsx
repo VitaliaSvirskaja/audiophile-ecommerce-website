@@ -13,7 +13,7 @@ export const Header = () => (
           <Image src={hamburgerMenu} alt="" />
         </Popover.Button>
         <Transition
-          className="absolute top-16 left-6 sm:top-20 sm:left-10"
+          className="absolute top-16 left-6 z-10 sm:top-20 sm:left-10"
           enter="transition duration-100 ease-out"
           enterFrom="transform scale-95 opacity-0"
           enterTo="transform scale-100 opacity-100"
