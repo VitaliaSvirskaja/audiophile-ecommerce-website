@@ -31,7 +31,7 @@ export const Header = () => (
 
       <Link
         href="/"
-        className="focus-ring p-2 sm:justify-self-start sm:max-md:flex-1"
+        className="focus-ring p-2 sm:justify-self-start sm:max-lg:flex-1"
         title="Navigate to home"
       >
         <Image src={logo} alt="" width={143} height={25} />
