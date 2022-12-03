@@ -30,6 +30,9 @@
   .body-font{
     @apply text-[15px] font-medium leading-[25px]
   }
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-sepia rounded
+  }
 
 
 }
