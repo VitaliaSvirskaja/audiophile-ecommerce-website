@@ -13,11 +13,11 @@ export const Button = ({
   <button
     className={`${
       variant === "primary"
-        ? "bg-sepia text-white hover:bg-fuchsia"
+        ? "bg-sepia text-white hover:bg-fuchsia active:bg-sepia"
         : variant === "secondary"
-        ? "bg-white text-black hover:bg-black hover:text-white"
-        : "text-black-50 bg-white hover:text-sepia"
-    } sub-title py-4 px-8 leading-tight ${className}`}
+        ? "bg-white text-black hover:bg-black hover:text-white active:bg-white active:text-black"
+        : "text-black-50 bg-white hover:text-sepia active:text-black"
+    } sub-title py-4 px-8 leading-tight transition-colors ${className}`}
     {...buttonProps}
   >
     {children}
