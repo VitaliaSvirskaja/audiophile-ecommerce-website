@@ -39,9 +39,10 @@ export const Herosection = () => (
             made for the passionate music enthusiast.
           </p>
         </div>
-        <Button variant="primary" className="z-10">
-          SEE PRODUCT
-        </Button>
+
+        <Link href="/product/4" className="z-10">
+          <Button variant="primary">SEE PRODUCT</Button>
+        </Link>
       </div>
     </div>
   </div>
