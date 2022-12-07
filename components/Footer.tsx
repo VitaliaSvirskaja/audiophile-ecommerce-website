@@ -3,6 +3,8 @@ import logo from "../assets/logo.png";
 import facebook from "../assets/shared/desktop/icon-facebook.svg";
 import twitter from "../assets/shared/desktop/icon-twitter.svg";
 import instagram from "../assets/shared/desktop/icon-instagram.svg";
+import Link from "next/link";
+import { NavLink } from "./NavLink";
 
 export const Footer = () => {
   return (
@@ -31,23 +33,24 @@ export const Footer = () => {
             are devoted to helping you get the most out of personal audio. Come
             and visit our demo facility - we&apos;re open 7 days a week.
           </p>
-          <div className="flex gap-4">
-            <button>
-              <Image src={facebook} alt="" />
-            </button>
-            <button>
-              <Image src={twitter} alt="" />
-            </button>
-            <button>
-              <Image src={instagram} alt="" />
-            </button>
+
+          <div className="flex justify-between max-md:items-center max-md:gap-12 max-sm:flex-col">
+            <p className="body-font opacity-50 max-lg:text-center">
+              Copyright 2021. All Rights Reserved
+            </p>
+            <div className="flex gap-4">
+              <Link href="https://de-de.facebook.com/">
+                <Image src={facebook} alt="" />
+              </Link>
+              <Link href="https://twitter.com/?lang=de">
+                <Image src={twitter} alt="" />
+              </Link>
+              <Link href="https://www.instagram.com/">
+                <Image src={instagram} alt="" />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col items-center">
-        <p className="body-font w-full max-w-screen-xl">
-          Copyright 2021. All Rights Reserved
-        </p>
       </div>
     </div>
   );

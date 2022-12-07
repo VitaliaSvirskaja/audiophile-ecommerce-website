@@ -4,6 +4,7 @@ import cart from "../assets/shared/desktop/icon-cart.svg";
 import hamburgerMenu from "../assets/shared/tablet/icon-hamburger.svg";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
+import { NavLink } from "./NavLink";
 
 export const Header = () => (
   <div className="bg-almost-black px-6 sm:px-10">
@@ -68,18 +69,4 @@ export const Header = () => (
       </Popover>
     </div>
   </div>
-);
-
-interface NavLinkProps {
-  text: string;
-  href: string;
-}
-
-const NavLink = ({ text, href }: NavLinkProps) => (
-  <Link
-    href={href}
-    className="sub-title focus-ring rounded px-2 tracking-[2px]"
-  >
-    {text}
-  </Link>
 );
