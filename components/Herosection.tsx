@@ -6,7 +6,7 @@ import { Button } from "./Button";
 import Link from "next/link";
 
 export const Herosection = () => (
-  <div className="bg-almost-black">
+  <div className="bg-almost-black px-6 sm:px-10">
     <div className="relative m-auto max-w-screen-xl overflow-hidden border-t border-gray-400/20">
       <Image
         src={heroBannerDesktop}
@@ -26,7 +26,7 @@ export const Herosection = () => (
         fill
         className="z-0 object-contain sm:hidden"
       />
-      <div className="flex flex-col items-center gap-10 py-28 px-6 sm:px-10 sm:pt-32 sm:pb-40 lg:items-start">
+      <div className="flex flex-col items-center gap-10 py-28 sm:pt-32 sm:pb-40 lg:items-start">
         <div className="flex max-w-md flex-col gap-6 text-white">
           <p className="overline-font text-center opacity-50 lg:text-start">
             New product
