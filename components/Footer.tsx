@@ -1,10 +1,10 @@
 import Image from "next/image";
 import logo from "../assets/logo.png";
-import facebook from "../assets/shared/desktop/icon-facebook.svg";
-import twitter from "../assets/shared/desktop/icon-twitter.svg";
-import instagram from "../assets/shared/desktop/icon-instagram.svg";
+import { Twitter } from "../assets/shared/desktop/Twitter";
 import Link from "next/link";
 import { NavLink } from "./NavLink";
+import { Facebook } from "../assets/shared/desktop/Facebook";
+import { Instagram } from "../assets/shared/desktop/Instagram";
 
 export const Footer = () => {
   return (
@@ -51,15 +51,15 @@ export const Footer = () => {
             <p className="body-font opacity-50 max-lg:text-center">
               Copyright 2021. All Rights Reserved
             </p>
-            <div className="flex gap-4">
+            <div className="flex items-center gap-4">
               <Link href="https://de-de.facebook.com/">
-                <Image src={facebook} alt="" />
+                <Facebook />
               </Link>
               <Link href="https://twitter.com/?lang=de">
-                <Image src={twitter} alt="" />
+                <Twitter />
               </Link>
               <Link href="https://www.instagram.com/">
-                <Image src={instagram} alt="" />
+                <Instagram />
               </Link>
             </div>
           </div>
