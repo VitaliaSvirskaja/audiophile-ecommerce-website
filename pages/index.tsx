@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Header } from "../components/Header";
 import { Herosection } from "../components/Herosection";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <main>
         <Herosection />
       </main>
-      {/*<Footer />*/}
+      <Footer />
     </div>
   );
 }
