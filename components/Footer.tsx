@@ -8,7 +8,7 @@ import { Instagram } from "../assets/shared/desktop/Instagram";
 
 export const Footer = () => {
   return (
-    <footer className="absolute bottom-0 flex w-full flex-col items-center bg-almost-black px-6 pb-9 text-white sm:px-10 sm:pb-12">
+    <footer className="flex flex-col items-center bg-almost-black px-6 pb-9 text-white sm:px-10 sm:pb-12">
       <div className="flex w-full max-w-screen-xl flex-col">
         <div className="w-24 border-t-4 border-sepia max-sm:m-auto" />
         <div className="flex items-center justify-between gap-12 pt-14 pb-12 max-lg:flex-col sm:items-start sm:gap-8 sm:pb-8 lg:pt-20">
