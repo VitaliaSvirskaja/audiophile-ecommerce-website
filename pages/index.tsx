@@ -14,6 +14,7 @@ export default function Home() {
       <Header />
       <main>
         <Herosection />
+        <Categories />
       </main>
       <Footer />
     </div>
