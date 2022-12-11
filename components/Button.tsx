@@ -1,4 +1,6 @@
 import { ButtonHTMLAttributes, PropsWithChildren } from "react";
+import arrowRight from "../assets/shared/desktop/icon-arrow-right.svg";
+import Image from "next/image";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "tertiary";
@@ -16,12 +18,11 @@ export const Button = ({
         ? "bg-sepia text-white hover:bg-fuchsia active:bg-sepia"
         : variant === "secondary"
         ? "bg-white text-black hover:bg-black hover:text-white active:bg-white active:text-black"
-        : "text-black-50 bg-white hover:text-sepia active:text-black"
-    } sub-title py-4 px-8 leading-tight transition-colors ${className}`}
+        : "bg-none text-black opacity-50 hover:text-sepia active:text-black"
+    } sub-title flex items-center gap-3 py-4 px-8 leading-tight transition-colors ${className}`}
     {...buttonProps}
   >
     {children}
-    {/*TODO implement icon feature*/}
-    {variant === "tertiary" && "icon"}
+    {variant === "tertiary" && <Image src={arrowRight} alt="" />}
   </button>
 );
