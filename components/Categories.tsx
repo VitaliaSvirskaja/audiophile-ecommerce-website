@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const Categories = () => {
   return (
-    <div className="my-10 px-6 sm:my-28 md:px-10 lg:my-32">
+    <div className="w-full">
       <div className="m-auto flex max-w-screen-xl gap-4 max-sm:flex-col sm:gap-3 lg:items-end lg:justify-between lg:gap-7">
         <CategoryCard category="headphones" src={headphonesDesktop} />
         <CategoryCard category="speakers" src={speakersDesktop} />
@@ -39,6 +39,12 @@ const CategoryCard = ({ category, src }: Props) => {
             height={140}
             className="relative top-3 lg:hidden"
           />
+          <div className="sub-title lg:h6 text-center text-sm text-black">
+            {category}
+          </div>
+          <Button variant="tertiary" className="text-xs">
+            SHOP
+          </Button>
         </Link>
         <div className="sub-title lg:h6 text-sm text-black">{category}</div>
         <Button variant="tertiary" className="text-xs">

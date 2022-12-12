@@ -15,7 +15,9 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Herosection />
-        <Categories />
+        <div className="py-10 px-6 sm:py-28 md:px-10 lg:py-32 ">
+          <Categories />
+        </div>
       </main>
       <Footer />
     </div>
