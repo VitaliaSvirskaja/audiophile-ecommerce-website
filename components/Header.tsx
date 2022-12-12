@@ -8,9 +8,9 @@ import { NavLink } from "./NavLink";
 import { Categories } from "./Categories";
 
 export const Header = () => (
-  <div className="bg-almost-black px-6 sm:px-10">
+  <div className="sticky top-0 z-20 w-full bg-almost-black px-6 sm:px-10">
     <div className="m-auto flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 text-white sm:h-24">
-      <Popover className="lg:hidden">
+      <Popover className="z-20 lg:hidden">
         <Popover.Button className="focus-ring p-2" title="menu">
           <Image src={hamburgerMenu} alt="" />
         </Popover.Button>
