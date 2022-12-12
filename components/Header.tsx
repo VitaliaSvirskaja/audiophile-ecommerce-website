@@ -5,6 +5,7 @@ import hamburgerMenu from "../assets/shared/tablet/icon-hamburger.svg";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { NavLink } from "./NavLink";
+import { Categories } from "./Categories";
 
 export const Header = () => (
   <div className="bg-almost-black px-6 sm:px-10">
@@ -23,9 +24,13 @@ export const Header = () => (
           leaveTo="transform scale-95 opacity-0"
         >
           <Popover.Panel>
-            <div className="w-[calc(100vw-48px)] w-full rounded bg-white p-5 text-black shadow-md sm:w-[calc(100vw-80px)]">
-              Category
-            </div>
+            {({ close }) => {
+              return (
+                <div className="flex w-[calc(100vw-50px)] items-center justify-center rounded bg-white px-6 pt-10 pb-4 text-black shadow-md sm:w-[calc(100vw-80px)] md:px-10">
+                  <Categories onClick={close} />
+                </div>
+              );
+            }}
           </Popover.Panel>
         </Transition>
       </Popover>

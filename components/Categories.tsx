@@ -5,13 +5,29 @@ import speakersDesktop from "../assets/shared/desktop/image-category-thumbnail-s
 import earphonesDesktop from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import Link from "next/link";
 
-export const Categories = () => {
+interface CategoryProps {
+  onClick?: () => void;
+}
+
+export const Categories = ({ onClick }: CategoryProps) => {
   return (
     <div className="w-full">
       <div className="m-auto flex max-w-screen-xl gap-4 max-sm:flex-col sm:gap-3 lg:items-end lg:justify-between lg:gap-7">
-        <CategoryCard category="headphones" src={headphonesDesktop} />
-        <CategoryCard category="speakers" src={speakersDesktop} />
-        <CategoryCard category="earphones" src={earphonesDesktop} />
+        <CategoryCard
+          category="headphones"
+          src={headphonesDesktop}
+          onClick={onClick}
+        />
+        <CategoryCard
+          category="speakers"
+          src={speakersDesktop}
+          onClick={onClick}
+        />
+        <CategoryCard
+          category="earphones"
+          src={earphonesDesktop}
+          onClick={onClick}
+        />
       </div>
     </div>
   );
@@ -20,11 +36,12 @@ export const Categories = () => {
 interface Props {
   category: string;
   src: StaticImageData;
+  onClick?: () => void;
 }
 
-const CategoryCard = ({ category, src }: Props) => {
+export const CategoryCard = ({ category, src, onClick }: Props) => {
   return (
-    <div className="flex h-52 w-full items-end lg:h-80">
+    <div className="flex h-52 w-full items-end lg:h-80" onClick={onClick}>
       <div className="md:h-42 m-auto flex h-40 w-full flex-col items-center justify-end rounded-lg bg-middle-grey pb-3 max-lg:max-w-xs lg:h-48">
         <Link href={`/category/${category}`}>
           <Image
