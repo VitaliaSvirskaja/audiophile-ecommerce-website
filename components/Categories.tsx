@@ -63,10 +63,6 @@ export const CategoryCard = ({ category, src, onClick }: Props) => {
             SHOP
           </Button>
         </Link>
-        <div className="sub-title lg:h6 text-sm text-black">{category}</div>
-        <Button variant="tertiary" className="text-xs">
-          SHOP
-        </Button>
       </div>
     </div>
   );
