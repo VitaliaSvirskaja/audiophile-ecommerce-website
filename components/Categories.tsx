@@ -46,13 +46,13 @@ export const CategoryCard = ({ category, src, onClick }: Props) => {
         <Link href={`/category/${category}`}>
           <Image
             src={src}
-            alt=""
+            alt={category}
             height={200}
             className="relative top-4 hidden lg:block"
           />
           <Image
             src={src}
-            alt=""
+            alt={category}
             height={140}
             className="relative top-3 lg:hidden"
           />
