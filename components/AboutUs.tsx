@@ -5,7 +5,10 @@ import aboutUsImageMobile from "../assets/shared/mobile/image-best-gear.jpg";
 
 export const AboutUs = () => {
   return (
-    <div className="m-auto flex h-fit w-full max-w-screen-xl items-center gap-10 max-lg:flex-col md:gap-8 lg:h-[588px] lg:items-center lg:justify-between lg:gap-32">
+    <div
+      className="m-auto flex h-fit w-full max-w-screen-xl items-center gap-10 max-lg:flex-col md:gap-8 lg:h-[588px] lg:items-center lg:justify-between lg:gap-32"
+      title="aboutUs"
+    >
       <div className="lg:hidden">
         <Image
           src={aboutUsImageTablet}
