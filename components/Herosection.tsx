@@ -12,18 +12,22 @@ export const Herosection = () => (
         src={heroBannerDesktop}
         alt=""
         fill
+        priority
+        // TODO: add sizes property https://nextjs.org/docs/api-reference/next/legacy/image#sizes
         className="z-0 hidden object-cover lg:block"
       />
       <Image
         src={heroBannerTablet}
         alt=""
         fill
+        priority
         className="z-0 hidden object-contain sm:max-lg:block"
       />
       <Image
         src={heroBannerMobile}
         alt=""
         fill
+        priority
         className="z-0 object-contain sm:hidden"
       />
       <div className="flex flex-col items-center gap-10 py-28 sm:pt-32 sm:pb-40 lg:items-start">
