@@ -17,7 +17,7 @@ export const Button = ({
       variant === "primary"
         ? "bg-sepia text-white hover:bg-fuchsia active:bg-sepia"
         : variant === "secondary"
-        ? "bg-white text-black hover:bg-black hover:text-white active:bg-white active:text-black"
+        ? "border border-black bg-none text-black hover:bg-black hover:text-white active:bg-white active:text-black"
         : "bg-none text-black opacity-50 hover:text-sepia active:text-fuchsia"
     } sub-title m-auto flex items-center gap-3 py-4 px-8 leading-tight transition-colors ${className}`}
     {...buttonProps}
