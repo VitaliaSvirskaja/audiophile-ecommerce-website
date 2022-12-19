@@ -4,6 +4,7 @@ import { Herosection } from "../components/Herosection";
 import { Footer } from "../components/Footer";
 import { Categories } from "../components/Categories";
 import { AboutUs } from "../components/AboutUs";
+import { Highlights } from "../components/Highlights";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
         <Herosection />
         <div className="py-10 px-6 sm:py-28 md:px-10 lg:py-32 ">
           <Categories />
+        </div>
+        <div>
+          <Highlights />
         </div>
         <div className="py-10 px-6 sm:py-28 md:px-10 lg:py-32">
           <AboutUs />
