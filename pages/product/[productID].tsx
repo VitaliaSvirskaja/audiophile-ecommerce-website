@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Product } from "../../model/Product";
 import { Header } from "../../components/Header";
+import { InTheBox } from "../../components/InTheBox";
 
 export default function ProductComponent() {
   const router = useRouter();
@@ -17,7 +18,10 @@ export default function ProductComponent() {
   return (
     <div>
       <Header />
-      {data?.name}
+      <main className="px-6 sm:px-10">
+        <p className="m-auto max-w-screen-xl ">{data?.name}</p>
+        <InTheBox includedItems={data?.includes} />
+      </main>
     </div>
   );
 }
