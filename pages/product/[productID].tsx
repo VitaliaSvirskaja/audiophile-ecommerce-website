@@ -9,6 +9,9 @@ export default function ProductComponent() {
   const { productID } = router.query;
   const [data, setData] = useState<Product>();
 
+  const features = data?.features.split("\n\n");
+  console.log(features);
+
   useEffect(() => {
     fetch("/api/products/" + productID)
       .then((response) => response.json())
@@ -19,8 +22,15 @@ export default function ProductComponent() {
     <div>
       <Header />
       <main className="px-6 sm:px-10">
-        <p className="m-auto max-w-screen-xl ">{data?.name}</p>
-        <InTheBox includedItems={data?.includes} />
+        <p className="m-auto max-w-screen-xl">{data?.name}</p>
+        <div className="m-auto flex max-w-screen-xl gap-10 max-lg:flex-col sm:gap-28 lg:justify-between">
+          <div className="flex max-w-2xl flex-col gap-6 sm:gap-8">
+            <p className="h5">Features</p>
+            <p className="body-font break-all opacity-50">{features?.[0]}</p>
+            <p className="body-font break-all opacity-50">{features?.[1]}</p>
+          </div>
+          <InTheBox includedItems={data?.includes} />
+        </div>
       </main>
     </div>
   );
