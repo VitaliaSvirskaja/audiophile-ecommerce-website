@@ -9,4 +9,5 @@ export interface Product {
   id: number;
   name: string;
   includes: Array<IncludedItems>;
+  features: string;
 }
