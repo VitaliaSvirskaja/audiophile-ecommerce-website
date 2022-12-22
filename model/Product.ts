@@ -5,9 +5,19 @@ export interface IncludedItems {
   item: string;
 }
 
+export interface Recommendations {
+  name: string;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
+}
+
 export interface Product {
   id: number;
   name: string;
   includes: Array<IncludedItems>;
   features: string;
+  others: Array<Recommendations>;
 }

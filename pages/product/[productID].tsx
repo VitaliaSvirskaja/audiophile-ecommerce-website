@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Product } from "../../model/Product";
 import { Header } from "../../components/Header";
 import { InTheBox } from "../../components/InTheBox";
+import { Recos } from "../../components/Recos";
+import { Footer } from "../../components/Footer";
 
 export default function ProductComponent() {
   const router = useRouter();
@@ -25,13 +27,17 @@ export default function ProductComponent() {
         <p className="m-auto max-w-screen-xl">{data?.name}</p>
         <div className="m-auto flex max-w-screen-xl gap-10 max-lg:flex-col sm:gap-28 lg:justify-between">
           <div className="flex max-w-2xl flex-col gap-6 sm:gap-8">
-            <p className="h5">Features</p>
+            <p className="h3">Features</p>
             <p className="body-font break-all opacity-50">{features?.[0]}</p>
             <p className="body-font break-all opacity-50">{features?.[1]}</p>
           </div>
           <InTheBox includedItems={data?.includes} />
         </div>
+        <div className="my-4">
+          <Recos recommendations={data?.others} />
+        </div>
       </main>
+      <Footer />
     </div>
   );
 }
