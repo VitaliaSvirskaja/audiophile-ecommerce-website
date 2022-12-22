@@ -1,10 +1,10 @@
 import Image from "next/image";
-import logo from "../assets/logo.png";
-import { Twitter } from "../assets/shared/desktop/Twitter";
+import logo from "../public/assets/logo.png";
+import { Twitter } from "../public/assets/shared/desktop/Twitter";
 import Link from "next/link";
 import { NavLink } from "./NavLink";
-import { Facebook } from "../assets/shared/desktop/Facebook";
-import { Instagram } from "../assets/shared/desktop/Instagram";
+import { Facebook } from "../public/assets/shared/desktop/Facebook";
+import { Instagram } from "../public/assets/shared/desktop/Instagram";
 
 export const Footer = () => {
   return (

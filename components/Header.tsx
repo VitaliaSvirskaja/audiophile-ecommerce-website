@@ -1,7 +1,7 @@
 import Image from "next/image";
-import logo from "../assets/logo.png";
-import cart from "../assets/shared/desktop/icon-cart.svg";
-import hamburgerMenu from "../assets/shared/tablet/icon-hamburger.svg";
+import logo from "../public/assets/logo.png";
+import cart from "../public/assets/shared/desktop/icon-cart.svg";
+import hamburgerMenu from "../public/assets/shared/tablet/icon-hamburger.svg";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { NavLink } from "./NavLink";

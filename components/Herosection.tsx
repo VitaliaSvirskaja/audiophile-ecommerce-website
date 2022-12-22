@@ -1,7 +1,7 @@
 import Image from "next/image";
-import heroBannerDesktop from "../assets/home/desktop/image-hero.jpg";
-import heroBannerTablet from "../assets/home/tablet/image-header.jpg";
-import heroBannerMobile from "../assets/home/mobile/image-header.jpg";
+import heroBannerDesktop from "../public/assets/home/desktop/image-hero.jpg";
+import heroBannerTablet from "../public/assets/home/tablet/image-header.jpg";
+import heroBannerMobile from "../public/assets/home/mobile/image-header.jpg";
 import { Button } from "./Button";
 import Link from "next/link";
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import aboutUsImageDesktop from "../assets/shared/desktop/image-best-gear.jpg";
-import aboutUsImageTablet from "../assets/shared/tablet/image-best-gear.jpg";
-import aboutUsImageMobile from "../assets/shared/mobile/image-best-gear.jpg";
+import aboutUsImageDesktop from "../public/assets/shared/desktop/image-best-gear.jpg";
+import aboutUsImageTablet from "../public/assets/shared/tablet/image-best-gear.jpg";
+import aboutUsImageMobile from "../public/assets/shared/mobile/image-best-gear.jpg";
 
 export const AboutUs = () => {
   return (

@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, PropsWithChildren } from "react";
-import arrowRight from "../assets/shared/desktop/icon-arrow-right.svg";
+import arrowRight from "../public/assets/shared/desktop/icon-arrow-right.svg";
 import Image from "next/image";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {

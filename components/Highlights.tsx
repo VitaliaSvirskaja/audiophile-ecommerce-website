@@ -1,15 +1,15 @@
 import { Button } from "./Button";
 import Image from "next/image";
-import zx7SpeakerDesktop from "../assets/home/desktop/image-speaker-zx7.jpg";
-import zx7SpeakerTablet from "../assets/home/tablet/image-speaker-zx7.jpg";
-import zx7SpeakerMobile from "../assets/home/mobile/image-speaker-zx7.jpg";
-import zx9SpeakerDesktop from "../assets/home/desktop/image-speaker-zx9.png";
-import zx9SpeakerTablet from "../assets/home/tablet/image-speaker-zx9.png";
-import zx9SpeakerMobile from "../assets/home/mobile/image-speaker-zx9.png";
-import xy1EarphonesDesktop from "../assets/home/desktop/image-earphones-yx1.jpg";
-import xy1EarphonesTablet from "../assets/home/tablet/image-earphones-yx1.jpg";
-import xy1EarphonesMobile from "../assets/home/mobile/image-earphones-yx1.jpg";
-import highlightBackground from "../assets/home/desktop/pattern-circles.svg";
+import zx7SpeakerDesktop from "../public/assets/home/desktop/image-speaker-zx7.jpg";
+import zx7SpeakerTablet from "../public/assets/home/tablet/image-speaker-zx7.jpg";
+import zx7SpeakerMobile from "../public/assets/home/mobile/image-speaker-zx7.jpg";
+import zx9SpeakerDesktop from "../public/assets/home/desktop/image-speaker-zx9.png";
+import zx9SpeakerTablet from "../public/assets/home/tablet/image-speaker-zx9.png";
+import zx9SpeakerMobile from "../public/assets/home/mobile/image-speaker-zx9.png";
+import xy1EarphonesDesktop from "../public/assets/home/desktop/image-earphones-yx1.jpg";
+import xy1EarphonesTablet from "../public/assets/home/tablet/image-earphones-yx1.jpg";
+import xy1EarphonesMobile from "../public/assets/home/mobile/image-earphones-yx1.jpg";
+import highlightBackground from "../public/assets/home/desktop/pattern-circles.svg";
 import Link from "next/link";
 
 export const Highlights = () => {

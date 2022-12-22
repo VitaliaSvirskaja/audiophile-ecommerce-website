@@ -1,8 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 import { Button } from "./Button";
-import headphonesDesktop from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speakersDesktop from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
-import earphonesDesktop from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
+import headphonesDesktop from "../public/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import speakersDesktop from "../public/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import earphonesDesktop from "../public/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import Link from "next/link";
 
 interface CategoryProps {
@@ -39,31 +39,29 @@ interface Props {
   onClick?: () => void;
 }
 
-export const CategoryCard = ({ category, src, onClick }: Props) => {
-  return (
-    <div className="flex h-52 w-full items-end lg:h-80" onClick={onClick}>
-      <div className="md:h-42 m-auto flex h-40 w-full flex-col items-center justify-end rounded-lg bg-middle-grey pb-3 max-lg:max-w-xs lg:h-48">
-        <Link href={`/category/${category}`}>
-          <Image
-            src={src}
-            alt={category}
-            height={200}
-            className="relative top-4 hidden lg:block"
-          />
-          <Image
-            src={src}
-            alt={category}
-            height={140}
-            className="relative top-3 lg:hidden"
-          />
-          <div className="sub-title lg:h6 text-center text-sm text-black">
-            {category}
-          </div>
-          <Button variant="tertiary" className="text-xs">
-            SHOP
-          </Button>
-        </Link>
-      </div>
+export const CategoryCard = ({ category, src, onClick }: Props) => (
+  <div className="flex h-52 w-full items-end lg:h-80" onClick={onClick}>
+    <div className="md:h-42 m-auto flex h-40 w-full flex-col items-center justify-end rounded-lg bg-middle-grey pb-3 max-lg:max-w-xs lg:h-48">
+      <Link href={`/category/${category}`}>
+        <Image
+          src={src}
+          alt={category}
+          height={200}
+          className="relative top-4 hidden lg:block"
+        />
+        <Image
+          src={src}
+          alt={category}
+          height={140}
+          className="relative top-3 lg:hidden"
+        />
+        <div className="sub-title lg:h6 text-center text-sm text-black">
+          {category}
+        </div>
+        <Button variant="tertiary" className="text-xs">
+          SHOP
+        </Button>
+      </Link>
     </div>
-  );
-};
+  </div>
+);
