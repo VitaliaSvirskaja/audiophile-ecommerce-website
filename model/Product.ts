@@ -7,6 +7,7 @@ export interface IncludedItems {
 
 export interface Recommendations {
   name: string;
+  slug: string;
   image: {
     mobile: string;
     tablet: string;

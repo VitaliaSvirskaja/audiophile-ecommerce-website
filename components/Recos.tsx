@@ -16,6 +16,7 @@ export const Recos = ({ recommendations }: RecosProps) => {
           return (
             <RecoCard
               name={recommendation.name}
+              slug={recommendation.slug}
               image={recommendation.image}
               key={recommendation.name}
             />
@@ -28,6 +29,7 @@ export const Recos = ({ recommendations }: RecosProps) => {
 
 interface Props {
   name: string;
+  slug: string;
   image: {
     mobile: string;
     tablet: string;
@@ -35,10 +37,10 @@ interface Props {
   };
 }
 
-export const RecoCard = ({ name, image }: Props) => {
+export const RecoCard = ({ name, image, slug }: Props) => {
   return (
     <Link
-      href="/"
+      href={`/product/${slug}`}
       className="flex w-full flex-col items-center justify-center gap-8 max-lg:max-w-xs"
     >
       <div className="w-full rounded-lg bg-middle-grey">
