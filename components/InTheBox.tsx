@@ -6,8 +6,8 @@ interface Props {
 
 export const InTheBox = ({ includedItems }: Props) => {
   return (
-    <div className="flex max-w-screen-xl gap-6 max-sm:flex-col sm:gap-40 lg:m-auto lg:flex-col lg:gap-8">
-      <div className="h5">In the box</div>
+    <div className="flex max-w-screen-xl gap-6 max-sm:flex-col sm:gap-40 lg:mx-auto lg:flex-col lg:gap-8">
+      <div className="h3">In the box</div>
       <div>
         <ul className="flex flex-col gap-2">
           {includedItems?.map((includedItem) => (
