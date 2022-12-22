@@ -8,17 +8,17 @@ import { Footer } from "../../components/Footer";
 
 export default function ProductComponent() {
   const router = useRouter();
-  const { productID } = router.query;
+  const { productSlug } = router.query;
   const [data, setData] = useState<Product>();
 
   const features = data?.features.split("\n\n");
   console.log(features);
 
   useEffect(() => {
-    fetch("/api/products/" + productID)
+    fetch("/api/products/" + productSlug)
       .then((response) => response.json())
       .then(setData);
-  }, [productID]);
+  }, [productSlug]);
 
   return (
     <div>

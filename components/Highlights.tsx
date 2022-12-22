@@ -54,7 +54,7 @@ export const Highlights = () => {
                   deliver truly remarkable sound.
                 </p>
               </div>
-              <Link href="/product/6">
+              <Link href="/product/zx9-speaker">
                 <Button variant="secondary" className="m-0 w-fit">
                   SEE PRODUCT
                 </Button>
@@ -84,7 +84,7 @@ export const Highlights = () => {
           />
           <div className="z-10 ml-6 flex flex-col justify-center gap-8 sm:ml-16 lg:ml-24">
             <p className="h4">ZX7 SPEAKER</p>
-            <Link href="/product/5">
+            <Link href="/product/zx7-speaker">
               <Button variant="secondary" className="m-0 w-fit">
                 SEE PRODUCT
               </Button>
@@ -115,7 +115,7 @@ export const Highlights = () => {
           </div>
           <div className="flex flex-col justify-center gap-8 rounded-lg bg-middle-grey py-10 pl-6 sm:py-24 sm:pl-10 lg:py-28 lg:pl-24">
             <p className="h4">YX1 EARPHONES</p>
-            <Link href="/product/1">
+            <Link href="/product/yx1-earphones">
               <Button variant="secondary" className="m-0 w-fit">
                 SEE PRODUCT
               </Button>

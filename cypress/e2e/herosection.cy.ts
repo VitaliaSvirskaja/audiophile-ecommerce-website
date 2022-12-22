@@ -28,7 +28,7 @@ describe("herosection", () => {
   it("should link to the coresponding product page", () => {
     cy.get("main").contains("SEE PRODUCT").click();
     cy.wait(100);
-    cy.url().should("include", "/product/4");
+    cy.url().should("include", "/product/xx99-mark-two-headphones");
     cy.contains("XX99 Mark II Headphones");
   });
 });

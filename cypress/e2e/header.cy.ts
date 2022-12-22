@@ -40,13 +40,13 @@ describe("header", () => {
 
   it("should return to home on logo click", () => {
     cy.visit("localhost:3000/category/earphones");
-    cy.get("[title='Navigate to home']").click();
-    cy.wait(100);
+    cy.get("[title='Navigate to home']").first().click();
+    cy.wait(200);
     cy.url().should("equal", "http://localhost:3000/");
   });
 
   it("should open the menu on hamburger menu click", () => {
     cy.viewport("ipad-2");
-    cy.get("[title='menu']").click().parent().contains("Category");
+    cy.get("[title='menu']").click().parent().contains("headphones");
   });
 });

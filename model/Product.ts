@@ -16,6 +16,7 @@ export interface Recommendations {
 
 export interface Product {
   id: number;
+  slug: string;
   name: string;
   includes: Array<IncludedItems>;
   features: string;

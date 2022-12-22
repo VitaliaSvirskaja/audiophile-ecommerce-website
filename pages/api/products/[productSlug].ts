@@ -7,12 +7,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { productID } = req.query;
+  const { productSlug } = req.query;
   const jsonDirectory = path.join(process.cwd(), "data");
   const fileContents = await fs.readFile(jsonDirectory + "/data.json", "utf8");
   const products: Array<Product> = JSON.parse(fileContents);
   const foundProduct: Product | undefined = products.find(
-    (product): boolean => product.id.toString() === productID
+    (product): boolean => product.slug === productSlug
   );
 
   if (foundProduct === undefined) {

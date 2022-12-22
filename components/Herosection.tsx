@@ -43,7 +43,7 @@ export const Herosection = () => (
             made for the passionate music enthusiast.
           </p>
         </div>
-        <Link href="/product/4" className="z-10">
+        <Link href="/product/xx99-mark-two-headphones" className="z-10">
           <Button variant="primary">SEE PRODUCT</Button>
         </Link>
       </div>
