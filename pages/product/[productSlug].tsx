@@ -5,6 +5,7 @@ import { Header } from "../../components/Header";
 import { InTheBox } from "../../components/InTheBox";
 import { Recos } from "../../components/Recos";
 import { Footer } from "../../components/Footer";
+import { ProductDetailHero } from "../../components/ProductDetailHero";
 
 export default function ProductComponent() {
   const router = useRouter();
@@ -23,8 +24,8 @@ export default function ProductComponent() {
   return (
     <div>
       <Header />
-      <main className="px-6 sm:px-10">
-        <p className="m-auto max-w-screen-xl">{data?.name}</p>
+      <main className="px-6 sm:px-10 ">
+        <ProductDetailHero product={data} />
         <div className="m-auto flex max-w-screen-xl gap-10 max-lg:flex-col sm:gap-28 lg:justify-between">
           <div className="flex max-w-2xl flex-col gap-6 sm:gap-8">
             <p className="h3">Features</p>
