@@ -11,7 +11,7 @@ export const Recos = ({ recommendations }: RecosProps) => {
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-10 sm:gap-14 lg:gap-16">
       <p className="h3 text-center">you may also like</p>
-      <div className="flex gap-14 max-sm:flex-col sm:gap-3 lg:gap-8 ">
+      <div className="flex items-center gap-14 max-sm:flex-col sm:gap-3 lg:gap-8">
         {recommendations?.map((recommendation) => {
           return (
             <RecoCard
