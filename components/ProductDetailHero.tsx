@@ -2,18 +2,20 @@ import Image from "next/image";
 import { Product } from "../model/Product";
 import { AddToCart } from "./AddToCart";
 import { currencyFormatter } from "../utils/currencyFormatter";
+import { useCartContext } from "../context/CartContext";
 
 interface Props {
   product: Product | undefined;
 }
 
 export const ProductDetailHero = ({ product }: Props) => {
-  function handleAddToCart(counter: number) {
+  const { updateCart } = useCartContext();
+
+  function handleAddToCart(amount: number) {
     if (product === undefined) {
       return;
     }
-    const price = counter * product?.price;
-    console.log(price);
+    updateCart(amount, product.slug, product.price);
   }
 
   return (
