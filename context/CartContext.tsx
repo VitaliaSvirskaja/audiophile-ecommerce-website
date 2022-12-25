@@ -19,17 +19,13 @@ export function CartContextProvider({ children }: PropsWithChildren) {
 
   function updateCart(amount: number, slug: string, price: number) {
     const newItem = { slug: slug, quantity: amount, price: price };
-    const foundItem = cartItems.find((cartItem) => {
-      return cartItem.slug === slug;
-    });
+    const foundItem = cartItems.find((cartItem) => cartItem.slug === slug);
     if (foundItem) {
-      const updatedItems = cartItems.map((cartItem) => {
-        return {
-          slug: cartItem.slug,
-          price: cartItem.price,
-          quantity: cartItem.quantity + foundItem.quantity,
-        };
-      });
+      const updatedItems = cartItems.map((cartItem) => ({
+        slug: cartItem.slug,
+        price: cartItem.price,
+        quantity: cartItem.quantity + foundItem.quantity,
+      }));
       setCartItems(updatedItems);
     } else {
       const newItems = [...cartItems, newItem];
