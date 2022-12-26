@@ -19,7 +19,7 @@ export const Button = ({
         : variant === "secondary"
         ? "border border-black bg-none text-black hover:bg-black hover:text-white active:bg-white active:text-black"
         : "bg-none text-black opacity-50 hover:text-sepia active:text-fuchsia"
-    } sub-title m-auto flex items-center gap-3 py-4 px-8 leading-tight transition-colors ${className}`}
+    } sub-title m-auto flex items-center justify-center gap-3 py-4 px-8 leading-tight transition-colors ${className}`}
     {...buttonProps}
   >
     {children}
