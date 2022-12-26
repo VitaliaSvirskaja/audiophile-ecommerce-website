@@ -8,14 +8,23 @@ interface Item {
 interface CartContextInterface {
   items: Array<Item>;
   updateCart: (amount: number, slug: string, price: number) => void;
+  totalAmount: number;
 }
 const cartContext = createContext<CartContextInterface>({
   items: [],
   updateCart: () => undefined,
+  totalAmount: 0,
 });
 
 export function CartContextProvider({ children }: PropsWithChildren) {
   const [cartItems, setCartItems] = useState<Array<Item>>([]);
+  const itemsAmount = cartItems.map((item) => {
+    return item.quantity;
+  });
+  const initialvalue = 0;
+  const totalAmount = itemsAmount.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue;
+  }, initialvalue);
 
   function updateCart(amount: number, slug: string, price: number) {
     const newItem = { slug: slug, quantity: amount, price: price };
@@ -48,6 +57,7 @@ export function CartContextProvider({ children }: PropsWithChildren) {
       value={{
         items: cartItems,
         updateCart: updateCart,
+        totalAmount: totalAmount,
       }}
     >
       {children}
