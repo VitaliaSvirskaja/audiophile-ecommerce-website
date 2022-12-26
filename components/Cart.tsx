@@ -10,7 +10,7 @@ export const Cart = () => {
     useCartContext();
 
   return (
-    <div className="flex max-w-lg flex-col gap-6 rounded-lg">
+    <div className="m-auto flex max-w-lg flex-col gap-6 rounded-lg">
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
           <p className="h6">cart ({totalAmount})</p>
@@ -26,15 +26,15 @@ export const Cart = () => {
             return (
               <li
                 key={item.slug}
-                className="flex items-center justify-between gap-10"
+                className="flex items-center justify-between gap-20 sm:gap-32 lg:gap-44"
               >
                 <div className="flex items-center gap-4">
                   <Image
-                    src={`/${item.slug}`}
+                    src={`/assets/cart/image-${item.slug}.jpg`}
                     alt=""
-                    width={100}
-                    height={100}
-                    className="m-auto hidden rounded-lg lg:block"
+                    width={70}
+                    height={70}
+                    className="rounded-lg"
                   />
 
                   <div className="flex flex-col">
@@ -44,7 +44,7 @@ export const Cart = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-2 max-sm:flex-col max-sm:items-end">
                   <div className="sub-title flex items-center gap-5 bg-middle-grey py-2 px-4">
                     <button
                       className="opacity-25 hover:text-sepia hover:opacity-100 active:text-fuchsia"

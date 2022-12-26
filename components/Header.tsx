@@ -85,7 +85,7 @@ export const Header = () => {
               leaveTo="transform scale-95 opacity-0"
             >
               <Popover.Panel>
-                <div className="rounded bg-white p-5 text-black shadow-md">
+                <div className="flex rounded bg-white p-5 text-black shadow-md">
                   <Cart />
                 </div>
               </Popover.Panel>
