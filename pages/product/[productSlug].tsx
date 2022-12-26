@@ -6,6 +6,8 @@ import { InTheBox } from "../../components/InTheBox";
 import { Recos } from "../../components/Recos";
 import { Footer } from "../../components/Footer";
 import { ProductDetailHero } from "../../components/ProductDetailHero";
+import { AboutUs } from "../../components/AboutUs";
+import { ProductImages } from "../../components/ProductImages";
 
 export default function ProductComponent() {
   const router = useRouter();
@@ -39,6 +41,9 @@ export default function ProductComponent() {
         </div>
         <div className="my-4">
           <Recos recommendations={data?.others} />
+        </div>
+        <div>
+          <AboutUs />
         </div>
       </main>
       <Footer />
