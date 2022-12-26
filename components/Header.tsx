@@ -7,16 +7,15 @@ import { Popover, Transition } from "@headlessui/react";
 import { NavLink } from "./NavLink";
 import { Categories } from "./Categories";
 import { useCartContext } from "../context/CartContext";
+import { useEffect, useRef } from "react";
 
 export const Header = () => {
-  const { items } = useCartContext();
-  const itemsAmount = items.map((item) => {
-    return item.quantity;
-  });
-  const initialvalue = 0;
-  const totalAmount = itemsAmount.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue;
-  }, initialvalue);
+  const openPanelRef = useRef<HTMLButtonElement | null>(null);
+  const { totalAmount } = useCartContext();
+
+  useEffect(() => {
+    openPanelRef.current?.click();
+  }, [totalAmount]);
 
   return (
     <div className="sticky top-0 z-20 w-full bg-almost-black px-6 sm:px-10">
@@ -60,19 +59,18 @@ export const Header = () => {
           <NavLink text="Speakers" href="/category/speakers" />
           <NavLink text="Earphones" href="/category/earphones" />
         </nav>
-
+        {/* TODO: focus ring um cart symbol ändern*/}
         <Popover>
           <Popover.Button
+            ref={openPanelRef}
             className="focus-ring indicator flex items-center p-2"
             aria-label="cart"
           >
             <Image src={cart} alt="" width={23} height={20} />
-            {totalAmount > 0 ? (
+            {totalAmount > 0 && (
               <span className="indicator-item badge badge-secondary relative left-1 bottom-3 rounded-full bg-sepia px-1.5 text-sm font-semibold">
                 {totalAmount}
               </span>
-            ) : (
-              ""
             )}
           </Popover.Button>
           <div className="relative max-w-screen-xl">
