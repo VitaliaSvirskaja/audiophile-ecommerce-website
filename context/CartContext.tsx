@@ -22,6 +22,8 @@ interface CartContextInterface {
 const cartContext = createContext<CartContextInterface>({
   items: [],
   updateCart: () => undefined,
+  removeAll: () => undefined,
+  removeItem: () => undefined,
   totalAmount: 0,
   totalPrice: 0,
 });
