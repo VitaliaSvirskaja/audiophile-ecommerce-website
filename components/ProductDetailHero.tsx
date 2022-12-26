@@ -15,7 +15,7 @@ export const ProductDetailHero = ({ product }: Props) => {
     if (product === undefined) {
       return;
     }
-    updateCart(amount, product.slug, product.price);
+    updateCart(amount, product.slug, product.price, product.name);
   }
 
   return (
@@ -55,7 +55,7 @@ export const ProductDetailHero = ({ product }: Props) => {
             {currencyFormatter.format(product?.price || 0)}
           </div>
         </div>
-        <AddToCart onAddToCart={handleAddToCart} />
+        <AddToCart onAddToCart={handleAddToCart} key={product?.slug} />
       </div>
     </div>
   );

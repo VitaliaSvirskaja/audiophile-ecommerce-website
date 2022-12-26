@@ -2,6 +2,7 @@ import { createContext, PropsWithChildren, useContext, useState } from "react";
 
 interface Item {
   slug: string;
+  name: string;
   price: number;
   quantity: number;
 }
@@ -26,8 +27,20 @@ export function CartContextProvider({ children }: PropsWithChildren) {
     return previousValue + currentValue;
   }, initialvalue);
 
-  function updateCart(amount: number, slug: string, price: number) {
-    const newItem = { slug: slug, quantity: amount, price: price };
+  function removeItem(slug: string) {
+    const updatedCartItems = cartItems.filter((cartItem) => {
+      return cartItem.slug !== slug;
+    });
+    setCartItems(updatedCartItems);
+  }
+
+  function updateCart(
+    amount: number,
+    slug: string,
+    price: number,
+    name: string
+  ) {
+    const newItem = { slug: slug, quantity: amount, price: price, name: name };
     const foundItem = cartItems.find((cartItem) => cartItem.slug === slug);
     if (foundItem) {
       const updatedItems = cartItems.map((cartItem) => {
@@ -35,12 +48,14 @@ export function CartContextProvider({ children }: PropsWithChildren) {
           return {
             slug: cartItem.slug,
             price: cartItem.price,
+            name: cartItem.name,
             quantity: cartItem.quantity + amount,
           };
         } else {
           return {
             slug: cartItem.slug,
             price: cartItem.price,
+            name: cartItem.name,
             quantity: cartItem.quantity,
           };
         }
@@ -57,7 +72,10 @@ export function CartContextProvider({ children }: PropsWithChildren) {
       value={{
         items: cartItems,
         updateCart: updateCart,
+        removeAll: removeAll,
+        removeItem: removeItem,
         totalAmount: totalAmount,
+        totalPrice: totalPrice,
       }}
     >
       {children}
