@@ -8,6 +8,7 @@ import { NavLink } from "./NavLink";
 import { Categories } from "./Categories";
 import { useCartContext } from "../context/CartContext";
 import { useEffect, useRef } from "react";
+import { Cart } from "./Cart";
 
 export const Header = () => {
   const openPanelRef = useRef<HTMLButtonElement | null>(null);
@@ -85,7 +86,7 @@ export const Header = () => {
             >
               <Popover.Panel>
                 <div className="rounded bg-white p-5 text-black shadow-md">
-                  Cart
+                  <Cart />
                 </div>
               </Popover.Panel>
             </Transition>
