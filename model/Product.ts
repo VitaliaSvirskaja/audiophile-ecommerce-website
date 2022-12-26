@@ -11,6 +11,12 @@ export interface ProductImages {
   desktop: string;
 }
 
+export interface ProductGallery {
+  first: ProductImages;
+  second: ProductImages;
+  third: ProductImages;
+}
+
 export interface Recommendations {
   name: string;
   slug: string;
@@ -32,4 +38,5 @@ export interface Product {
   includes: Array<IncludedItems>;
   features: string;
   others: Array<Recommendations>;
+  gallery: ProductGallery;
 }

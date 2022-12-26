@@ -34,6 +34,9 @@ export default function ProductComponent() {
           </div>
           <InTheBox includedItems={data?.includes} />
         </div>
+        <div className="my-8">
+          <ProductImages galleryImages={data?.gallery} />
+        </div>
         <div className="my-4">
           <Recos recommendations={data?.others} />
         </div>
