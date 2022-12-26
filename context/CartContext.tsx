@@ -8,24 +8,42 @@ interface Item {
 }
 interface CartContextInterface {
   items: Array<Item>;
-  updateCart: (amount: number, slug: string, price: number) => void;
+  updateCart: (
+    amount: number,
+    slug: string,
+    price: number,
+    name: string
+  ) => void;
+  removeAll: () => void;
+  removeItem: (slug: string) => void;
   totalAmount: number;
+  totalPrice: number;
 }
 const cartContext = createContext<CartContextInterface>({
   items: [],
   updateCart: () => undefined,
   totalAmount: 0,
+  totalPrice: 0,
 });
 
 export function CartContextProvider({ children }: PropsWithChildren) {
   const [cartItems, setCartItems] = useState<Array<Item>>([]);
-  const itemsAmount = cartItems.map((item) => {
-    return item.quantity;
+  const itemsAmountArray = cartItems.map((item) => item.quantity);
+  const totalAmount = itemsAmountArray.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
+  const totalPriceArray = cartItems.map((item) => {
+    return item.price * item.quantity;
   });
-  const initialvalue = 0;
-  const totalAmount = itemsAmount.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue;
-  }, initialvalue);
+  const totalPrice = totalPriceArray.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
+
+  function removeAll() {
+    setCartItems([]);
+  }
 
   function removeItem(slug: string) {
     const updatedCartItems = cartItems.filter((cartItem) => {
