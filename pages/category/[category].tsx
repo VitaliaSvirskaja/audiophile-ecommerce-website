@@ -6,6 +6,8 @@ import { Product } from "../../model/Product";
 import Image from "next/image";
 import { Categories } from "../../components/Categories";
 import { AboutUs } from "../../components/AboutUs";
+import { Button } from "../../components/Button";
+import Link from "next/link";
 
 export default function Category() {
   const router = useRouter();
@@ -64,13 +66,16 @@ export default function Category() {
                   </div>
                 )}
 
-                <div className="flex flex-col gap-6 sm:gap-8">
+                <div className="flex flex-col gap-6 sm:gap-8 lg:items-start">
                   <div className="h4 lg:h2 tracking-wider max-lg:text-center">
                     {product?.name}
                   </div>
                   <div className="body-font opacity-50 max-lg:text-center">
                     {product?.description}
                   </div>
+                  <Link href={`/product/${product.slug}`}>
+                    <Button>see product</Button>
+                  </Link>
                 </div>
               </div>
             </div>
