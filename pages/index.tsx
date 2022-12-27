@@ -17,13 +17,13 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Herosection />
-        <div className="py-10 px-6 sm:py-28 md:px-10 lg:py-32 ">
+        <div className="py-10 sm:py-28 lg:py-32 ">
           <Categories />
         </div>
         <div>
           <Highlights />
         </div>
-        <div className="py-10 px-6 sm:py-28 md:px-10 lg:py-32">
+        <div className="py-10 sm:py-28 lg:py-32">
           <AboutUs />
         </div>
       </main>

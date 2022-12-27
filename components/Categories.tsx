@@ -11,7 +11,7 @@ interface CategoryProps {
 
 export const Categories = ({ onClick }: CategoryProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full px-6 md:px-10">
       <div className="m-auto flex max-w-screen-xl gap-4 max-sm:flex-col sm:gap-3 lg:items-end lg:justify-between lg:gap-7">
         <CategoryCard
           category="headphones"
