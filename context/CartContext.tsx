@@ -18,6 +18,7 @@ interface CartContextInterface {
   removeItem: (slug: string) => void;
   totalAmount: number;
   totalPrice: number;
+  VAT: number;
 }
 const cartContext = createContext<CartContextInterface>({
   items: [],
@@ -26,6 +27,7 @@ const cartContext = createContext<CartContextInterface>({
   removeItem: () => undefined,
   totalAmount: 0,
   totalPrice: 0,
+  VAT: 0,
 });
 
 export function CartContextProvider({ children }: PropsWithChildren) {
@@ -38,14 +40,15 @@ export function CartContextProvider({ children }: PropsWithChildren) {
   const totalPriceArray = cartItems.map((item) => {
     return item.price * item.quantity;
   });
-  const totalNetPrice = totalPriceArray.reduce(
+  const totalPrice = totalPriceArray.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     0
   );
-  const totalPrice = totalNetPrice * 1.2;
+
   function removeAll() {
     setCartItems([]);
   }
+  const VAT = totalPrice * 0.2;
 
   function removeItem(slug: string) {
     const updatedCartItems = cartItems.filter((cartItem) => {
@@ -96,6 +99,7 @@ export function CartContextProvider({ children }: PropsWithChildren) {
         removeItem: removeItem,
         totalAmount: totalAmount,
         totalPrice: totalPrice,
+        VAT: VAT,
       }}
     >
       {children}
