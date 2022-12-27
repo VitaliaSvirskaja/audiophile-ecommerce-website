@@ -38,11 +38,11 @@ export function CartContextProvider({ children }: PropsWithChildren) {
   const totalPriceArray = cartItems.map((item) => {
     return item.price * item.quantity;
   });
-  const totalPrice = totalPriceArray.reduce(
+  const totalNetPrice = totalPriceArray.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     0
   );
-
+  const totalPrice = totalNetPrice * 1.2;
   function removeAll() {
     setCartItems([]);
   }
