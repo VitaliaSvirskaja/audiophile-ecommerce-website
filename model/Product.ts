@@ -34,6 +34,7 @@ export interface Product {
   image: ProductImages;
   new: boolean;
   price: number;
+  category: string;
   description: string;
   includes: Array<IncludedItems>;
   features: string;
