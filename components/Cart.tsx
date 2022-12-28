@@ -12,10 +12,10 @@ export const Cart = () => {
   return (
     <div className="m-auto flex max-w-lg flex-col gap-6 rounded-lg">
       <div className="flex flex-col gap-8">
-        <div className="flex justify-between">
-          <p className="h6">cart ({totalAmount})</p>
+        <div className="flex justify-between gap-20">
+          <p className="h6 w-full whitespace-nowrap">cart ({totalAmount})</p>
           <button
-            className="body-font underline opacity-50 hover:text-sepia active:text-fuchsia"
+            className="body-font w-full whitespace-nowrap underline opacity-50 hover:text-sepia active:text-fuchsia"
             onClick={removeAll}
           >
             Remove all

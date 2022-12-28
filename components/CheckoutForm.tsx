@@ -23,7 +23,7 @@ export const CheckoutForm = () => {
           <Input
             label="Phone Number"
             placeholder="+1 202-555-0136"
-            type="number"
+            type="tel"
           />
         </div>
       </div>
@@ -53,7 +53,6 @@ export const CheckoutForm = () => {
                 type="radio"
                 value="e-Money"
                 id="e-Money"
-                checked
                 className="accent-sepia opacity-50 checked:opacity-100"
                 name="payment"
                 onClick={() => setPaymentMethod("e-money")}
@@ -86,7 +85,7 @@ export const CheckoutForm = () => {
         {paymentMethod === "cash" ? (
           <div className="flex gap-8">
             <Image src={cashIcon} alt="" className="col-span-1" />
-            <div className="col-start-2">
+            <div className="body-font col-start-2 opacity-50">
               The ‘Cash on Delivery’ option enables you to pay in cash when our
               delivery courier arrives at your residence. Just make sure your
               address is correct so that your order will not be cancelled.

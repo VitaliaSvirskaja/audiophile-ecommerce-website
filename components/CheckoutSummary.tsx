@@ -8,7 +8,7 @@ export const CheckoutSummary = () => {
   const { items, totalPrice, VAT, removeItem } = useCartContext();
 
   return (
-    <div className="flex h-fit flex-col gap-8 rounded-lg bg-white p-8">
+    <div className="flex h-fit w-96 flex-col gap-8 rounded-lg bg-white p-8">
       <div className="h6">summary</div>
       <div className="flex flex-col gap-6">
         {items.map((item) => {
