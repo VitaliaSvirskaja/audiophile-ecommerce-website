@@ -16,7 +16,7 @@ export const Input = ({ label, type, placeholder, className = "" }: Props) => {
         type={type}
         id={label}
         placeholder={placeholder}
-        className="rounded-lg border border-middle-grey py-5 px-6 text-sm font-semibold tracking-tight hover:border-sepia"
+        className="rounded-lg border border-middle-grey py-5 px-6 text-sm font-semibold tracking-tight hover:border-sepia focus:border-sepia focus:outline-none"
       />
     </div>
   );
