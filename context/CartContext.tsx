@@ -1,6 +1,6 @@
 import { createContext, PropsWithChildren, useContext, useState } from "react";
 
-interface Item {
+export interface Item {
   slug: string;
   name: string;
   price: number;
