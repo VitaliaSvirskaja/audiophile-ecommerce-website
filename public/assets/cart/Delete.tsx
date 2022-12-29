@@ -13,7 +13,7 @@ export const Delete = ({
       stroke="currentColor"
       width={24}
       height={24}
-      className={`opacity-50 ${className}`}
+      className={`opacity-50 hover:text-sepia active:text-fuchsia ${className}`}
       {...svgProps}
     >
       <path
