@@ -35,7 +35,7 @@ export const CheckoutSummary = () => {
               </div>
               <div className="flex gap-2 max-sm:items-end">
                 <div className="sub-title flex items-center gap-5">
-                  <div>x{item.quantity}</div>
+                  <div className="opacity-50">x{item.quantity}</div>
                 </div>
                 <button onClick={() => removeItem(item.slug)}>
                   <Delete />
