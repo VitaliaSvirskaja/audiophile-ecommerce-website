@@ -1,29 +1,77 @@
 import { Input } from "./Input";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cashIcon from "../public/assets/checkout/icon-cash-on-delivery.svg";
+import { SubmitHandler, useForm } from "react-hook-form";
 
+type Inputs = {
+  name: string;
+  email: string;
+  phone: number;
+  address: string;
+  zipCode: number;
+  city: string;
+  country: string;
+  payment: "cash" | "e-money";
+  eMoneyNumber: number;
+  eMoneyPIN: number;
+};
 export const CheckoutForm = () => {
   const [paymentMethod, setPaymentMethod] = useState<"cash" | "e-money">(
     "e-money"
   );
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>({ mode: "all" });
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log("Banana");
+    console.log(data);
+    console.log(data.address);
+  };
+
+  useEffect(() => {
+    console.log("Error" + errors);
+  }, [errors]);
 
   return (
-    <div className="flex w-full flex-col gap-14 rounded-lg bg-white p-12">
+    <form
+      className="flex w-full flex-col gap-14 rounded-lg bg-white p-12"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className="h3">checkout</div>
       <div>
         <div className="sub-title text-sepia">billing details</div>
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
-          <Input label="Name" placeholder="Alexei Ward" type="text" />
+          <Input
+            label="Name"
+            placeholder="Alexei Ward"
+            type="text"
+            errorMessage={errors.name?.message}
+            // className={errors.name && "border-2 border-error-red "}
+            {...register("name", { required: "Name is required." })}
+          />
+
           <Input
             label="Email Address"
             placeholder="alexei@mail.com"
             type="email"
+            errorMessage={errors.email?.message}
+            {...register("email", {
+              required: "Email is required.",
+              pattern: {
+                value: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
+                message: "Wrong format",
+              },
+            })}
           />
           <Input
             label="Phone Number"
             placeholder="+1 202-555-0136"
             type="tel"
+            errorMessage={errors.phone?.message}
+            {...register("phone", { required: "Phone number is required." })}
           />
         </div>
       </div>
@@ -34,11 +82,31 @@ export const CheckoutForm = () => {
             label="Address"
             placeholder="1137 Williams Avenue"
             type="text"
+            errorMessage={errors.address?.message}
             className="col-span-2"
+            {...register("address", { required: "Address is required." })}
           />
-          <Input label="ZIP Code" placeholder="10001" type="number" />
-          <Input label="City" placeholder="New York" type="text" />
-          <Input label="Country" placeholder="United States" type="text" />
+          <Input
+            label="ZIP Code"
+            placeholder="10001"
+            type="number"
+            errorMessage={errors.zipCode?.message}
+            {...register("zipCode", { required: "ZIP Code is required." })}
+          />
+          <Input
+            label="City"
+            placeholder="New York"
+            type="text"
+            errorMessage={errors.city?.message}
+            {...register("city", { required: "City is required." })}
+          />
+          <Input
+            label="Country"
+            placeholder="United States"
+            type="text"
+            errorMessage={errors.country?.message}
+            {...register("country", { required: "Country is required." })}
+          />
         </div>
       </div>
       <div className="flex flex-col gap-6">
@@ -54,8 +122,8 @@ export const CheckoutForm = () => {
                 value="e-Money"
                 id="e-Money"
                 className="accent-sepia opacity-50 checked:opacity-100"
-                name="payment"
                 onClick={() => setPaymentMethod("e-money")}
+                {...register("payment", { required: true })}
               />
               <label
                 htmlFor="e-Money"
@@ -70,8 +138,8 @@ export const CheckoutForm = () => {
                 value="Cash on Delivery"
                 id="Cash on Delivery"
                 className="accent-sepia opacity-50 checked:opacity-100"
-                name="payment"
                 onClick={() => setPaymentMethod("cash")}
+                {...register("payment", { required: true })}
               />
               <label
                 htmlFor="Cash on Delivery"
@@ -98,14 +166,26 @@ export const CheckoutForm = () => {
                 label="e-Money Number"
                 type="number"
                 placeholder="238521993"
+                errorMessage={errors.eMoneyNumber?.message}
+                {...register("eMoneyNumber", {
+                  required: "e-Money number is required.",
+                })}
               />
             </div>
             <div className="col-start-2">
-              <Input label="e-Money PIN" type="number" placeholder="6891" />
+              <Input
+                label="e-Money PIN"
+                type="number"
+                placeholder="6891"
+                errorMessage={errors.eMoneyPIN?.message}
+                {...register("eMoneyPIN", {
+                  required: "e-Money PIN is required.",
+                })}
+              />
             </div>
           </div>
         )}
       </div>
-    </div>
+    </form>
   );
 };
