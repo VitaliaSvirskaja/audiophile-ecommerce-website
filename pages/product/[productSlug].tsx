@@ -26,7 +26,16 @@ export default function ProductComponent() {
   return (
     <div>
       <Header />
+
       <main className="px-6 sm:px-10 ">
+        <div className="m-auto my-8 max-w-screen-xl">
+          <button
+            onClick={() => router.back()}
+            className="body-font opacity-50 hover:text-sepia"
+          >
+            Go Back
+          </button>
+        </div>
         <ProductDetailHero product={data} />
         <div className="m-auto flex max-w-screen-xl gap-10 max-lg:flex-col sm:gap-28 lg:justify-between">
           <div className="flex max-w-2xl flex-col gap-6 sm:gap-8">
