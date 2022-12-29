@@ -12,6 +12,7 @@ module.exports = {
         "almost-black": "#191919",
         "middle-grey": "#F1F1F1",
         "very-light-grey": "#FAFAFA",
+        "error-red": "#CD2C2C",
       },
     },
   },
