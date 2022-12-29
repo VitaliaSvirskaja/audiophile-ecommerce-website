@@ -1,7 +1,7 @@
-import { currencyFormatter } from "../utils/currencyFormatter";
 import { Button } from "./Button";
 import { useCartContext } from "../context/CartContext";
 import { ItemSummary } from "./ItemSummary";
+import { Price } from "./Price";
 
 export const CheckoutSummary = () => {
   const { items, totalPrice, VAT } = useCartContext();
@@ -16,31 +16,15 @@ export const CheckoutSummary = () => {
       </div>
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
-          <div className="flex justify-between">
-            <div className="body-font uppercase opacity-50">total</div>
-            <div className="h6 font-bold tracking-normal">
-              {currencyFormatter.format(totalPrice)}
-            </div>
-          </div>
-          <div className="flex justify-between">
-            <div className="body-font uppercase opacity-50">shipping</div>
-            <div className="h6 font-bold tracking-normal">
-              {currencyFormatter.format(totalPrice > 0 ? 50 : 0)}
-            </div>
-          </div>
-          <div className="flex justify-between">
-            <div className="body-font uppercase opacity-50">vat (included)</div>
-            <div className="h6 font-bold tracking-normal">
-              {currencyFormatter.format(VAT)}
-            </div>
-          </div>
+          <Price price={totalPrice} priceType="Total" />
+          <Price price={totalPrice > 0 ? 50 : 0} priceType="Shipping" />
+          <Price price={VAT} priceType="VAT (included)" />
         </div>
-        <div className="flex justify-between">
-          <div className="body-font uppercase opacity-50">grand total</div>
-          <div className="h6 font-bold tracking-normal text-sepia">
-            {currencyFormatter.format(totalPrice > 0 ? totalPrice + 50 : 0)}
-          </div>
-        </div>
+        <Price
+          price={totalPrice > 0 ? totalPrice + 50 : 0}
+          priceType="total grand"
+          className="text-sepia"
+        />
       </div>
       <Button className="w-full">continue & pay</Button>
     </div>
