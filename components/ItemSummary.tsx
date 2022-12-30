@@ -32,7 +32,7 @@ export const ItemSummary = ({ item }: Props) => {
         </div>
       </div>
       <div className="flex gap-2 max-sm:flex-col max-sm:items-end">
-        <div className="sub-title flex items-center gap-5 bg-middle-grey py-2 px-4">
+        <div className="sub-title flex items-center gap-2 bg-middle-grey py-2 px-4 sm:gap-5">
           <button
             className="opacity-25 hover:text-sepia hover:opacity-100 active:text-fuchsia"
             onClick={() => {
