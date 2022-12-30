@@ -10,7 +10,7 @@
     "e2e": "cypress open"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.4",
+    "@headlessui/react": "^1.7.7",
     "@next/font": "^13.0.5",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
