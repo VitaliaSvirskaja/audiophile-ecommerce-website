@@ -3,11 +3,15 @@ import { useCartContext } from "../context/CartContext";
 import { ItemSummary } from "./ItemSummary";
 import { Price } from "./Price";
 
-export const CheckoutSummary = () => {
+interface Props {
+  onPurchase: () => void;
+}
+
+export const CheckoutSummary = ({ onPurchase }: Props) => {
   const { items, totalPrice, VAT } = useCartContext();
 
   return (
-    <div className="flex h-fit flex-col gap-8 rounded-lg bg-white p-8">
+    <div className="flex h-fit flex-col gap-8 rounded-lg bg-white p-6 sm:p-8">
       <div className="h6">summary</div>
       <div className="flex flex-col gap-6">
         {items.map((item) => {
@@ -22,11 +26,17 @@ export const CheckoutSummary = () => {
         </div>
         <Price
           price={totalPrice > 0 ? totalPrice + 50 : 0}
-          priceType="total grand"
+          priceType="grand total"
           className="text-sepia"
         />
       </div>
-      <Button className="w-full">continue & pay</Button>
+      <Button
+        className="w-full disabled:bg-gray-300"
+        onClick={onPurchase}
+        disabled={totalPrice <= 0}
+      >
+        continue & pay
+      </Button>
     </div>
   );
 };
