@@ -8,6 +8,7 @@ import { Footer } from "../../components/Footer";
 import { ProductDetailHero } from "../../components/ProductDetailHero";
 import { AboutUs } from "../../components/AboutUs";
 import { ProductImages } from "../../components/ProductImages";
+import { Categories } from "../../components/Categories";
 
 export default function ProductComponent() {
   const router = useRouter();
@@ -28,7 +29,7 @@ export default function ProductComponent() {
       <Header />
 
       <main className="px-6 sm:px-10 ">
-        <div className="m-auto my-8 max-w-screen-xl">
+        <div className="m-auto my-7 max-w-screen-xl sm:my-8 lg:mt-20 lg:mb-24">
           <button
             onClick={() => router.back()}
             className="body-font opacity-50 hover:text-sepia"
@@ -37,21 +38,24 @@ export default function ProductComponent() {
           </button>
         </div>
         <ProductDetailHero product={data} />
-        <div className="m-auto flex max-w-screen-xl gap-10 max-lg:flex-col sm:gap-28 lg:justify-between">
-          <div className="flex max-w-2xl flex-col gap-6 sm:gap-8">
+        <div className="m-auto my-20 flex max-w-screen-xl gap-10 max-lg:flex-col sm:my-32 sm:gap-28 lg:my-40 lg:justify-between">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:max-w-2xl">
             <p className="h3">Features</p>
             <p className="body-font break-all opacity-50">{features?.[0]}</p>
             <p className="body-font break-all opacity-50">{features?.[1]}</p>
           </div>
           <InTheBox includedItems={data?.includes} />
         </div>
-        <div className="my-8">
+        <div>
           <ProductImages galleryImages={data?.gallery} />
         </div>
-        <div className="my-4">
+        <div className="my-32 lg:my-40">
           <Recos recommendations={data?.others} />
         </div>
         <div>
+          <Categories />
+        </div>
+        <div className="my-32 lg:my-40">
           <AboutUs />
         </div>
       </main>

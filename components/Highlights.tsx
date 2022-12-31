@@ -16,35 +16,37 @@ export const Highlights = () => {
   return (
     <div className="px-6 sm:px-10">
       <div className="m-auto flex max-w-screen-xl flex-col items-center gap-6 sm:gap-8 lg:gap-12">
-        <div className="relative w-full overflow-clip rounded-lg bg-sepia sm:h-[720px] lg:h-[560px]">
+        <div className="relative h-[600px] w-full overflow-clip rounded-lg bg-sepia sm:h-[720px] lg:h-[560px]">
           <Image
             src={highlightBackground}
             alt=""
             className="overflow-hidden bg-auto object-top"
           />
-          <div className="absolute bottom-12 flex w-full gap-16 max-lg:flex-col max-lg:items-center  lg:-bottom-4 lg:justify-between lg:gap-12 lg:pl-32 lg:pr-24">
-            <Image
-              src={zx9SpeakerDesktop}
-              alt=""
-              width={450}
-              height={500}
-              className="hidden lg:block"
-            />
-            <Image
-              src={zx9SpeakerTablet}
-              alt=""
-              width={200}
-              height={235}
-              className="hidden sm:max-lg:block"
-            />
-            <Image
-              src={zx9SpeakerMobile}
-              alt=""
-              width={170}
-              height={205}
-              className="sm:hidden"
-            />
-            <div className="flex w-80 flex-col justify-center gap-10 text-white max-lg:items-center max-lg:text-center">
+          <div className="absolute bottom-6 flex w-full gap-16 max-lg:flex-col max-lg:items-center lg:-bottom-4 lg:justify-between lg:gap-12 lg:pl-32 lg:pr-24">
+            <div>
+              <Image
+                src={zx9SpeakerDesktop}
+                alt=""
+                width={450}
+                height={500}
+                className="hidden lg:block"
+              />
+              <Image
+                src={zx9SpeakerTablet}
+                alt=""
+                width={200}
+                height={235}
+                className="hidden sm:max-lg:block"
+              />
+              <Image
+                src={zx9SpeakerMobile}
+                alt=""
+                width={170}
+                height={205}
+                className="sm:hidden"
+              />
+            </div>
+            <div className="flex w-80 flex-col justify-center gap-10 p-6 text-white max-lg:items-center max-lg:text-center">
               <div className="flex flex-col gap-6">
                 <p className="sm:h1 text-4xl font-bold leading-10 text-white">
                   ZX9 SPEAKER

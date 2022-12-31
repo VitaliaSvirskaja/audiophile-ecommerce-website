@@ -29,7 +29,7 @@ export default function Category() {
             {category}
           </div>
         </div>
-        <div className="my-8 flex flex-col gap-32 px-6 md:px-10 lg:gap-40">
+        <div className="mt-16 mb-32 flex flex-col gap-32 px-6 sm:my-32 md:px-10 lg:my-40 lg:gap-40">
           {categoryProducts.map((product, index) => (
             <div
               className="m-auto flex max-w-screen-xl gap-8 max-lg:flex-col sm:gap-12 lg:gap-32"
@@ -81,10 +81,10 @@ export default function Category() {
             </div>
           ))}
         </div>
-        <div className="my-32">
+        <div>
           <Categories />
         </div>
-        <div className="my-8">
+        <div className="my-32 lg:my-40">
           <AboutUs />
         </div>
       </main>

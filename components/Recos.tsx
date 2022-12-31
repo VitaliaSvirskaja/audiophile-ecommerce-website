@@ -46,21 +46,21 @@ export const RecoCard = ({ name, image, slug }: Props) => {
       <div className="w-full rounded-lg bg-middle-grey">
         <Image
           src={`/${image.desktop}`}
-          className="m-auto hidden lg:block"
+          className="m-auto hidden rounded-lg lg:block"
           alt=""
           width={330}
           height={320}
         />
         <Image
           src={`/${image.tablet}`}
-          className="m-auto hidden sm:max-lg:block"
+          className="m-auto hidden rounded-lg sm:max-lg:block"
           alt=""
           width={300}
           height={450}
         />
         <Image
           src={`/${image.mobile}`}
-          className="m-auto sm:hidden"
+          className="m-auto rounded-lg sm:hidden"
           alt=""
           width={400}
           height={400}
