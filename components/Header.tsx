@@ -15,7 +15,26 @@ export const Header = () => {
   const { totalAmount } = useCartContext();
 
   useEffect(() => {
+    function closeCart() {
+      isCartOpen = false;
+    }
+    const popOverRef = openPanelRef.current;
+    let isCartOpen = false;
+    popOverRef?.addEventListener("blur", closeCart);
     openPanelRef.current?.click();
+    isCartOpen = true;
+
+    const closeCartTimer = setTimeout(() => {
+      if (isCartOpen) {
+        openPanelRef.current?.click();
+        isCartOpen = false;
+      }
+    }, 3000);
+
+    return () => {
+      popOverRef?.removeEventListener("blur", closeCart);
+      clearTimeout(closeCartTimer);
+    };
   }, [totalAmount]);
 
   return (
