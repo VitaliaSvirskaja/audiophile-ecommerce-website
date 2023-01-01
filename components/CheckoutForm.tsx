@@ -2,34 +2,19 @@ import { Input } from "./Input";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import cashIcon from "../public/assets/checkout/icon-cash-on-delivery.svg";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { Inputs } from "../pages/checkout";
 
-type Inputs = {
-  name: string;
-  email: string;
-  phone: number;
-  address: string;
-  zipCode: number;
-  city: string;
-  country: string;
-  payment: "cash" | "e-money";
-  eMoneyNumber: number;
-  eMoneyPIN: number;
-};
-export const CheckoutForm = () => {
+interface Props {
+  onSubmit: () => void;
+  register: UseFormRegister<Inputs>;
+  errors: FieldErrors<Inputs>;
+}
+
+export const CheckoutForm = ({ onSubmit, register, errors }: Props) => {
   const [paymentMethod, setPaymentMethod] = useState<"cash" | "e-money">(
     "e-money"
   );
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>({ mode: "all" });
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log("Banana");
-    console.log(data);
-    console.log(data.address);
-  };
 
   useEffect(() => {
     console.log("Error" + errors);
@@ -38,7 +23,7 @@ export const CheckoutForm = () => {
   return (
     <form
       className="flex w-full flex-col gap-14 rounded-lg bg-white p-12"
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={onSubmit}
     >
       <div className="h3">checkout</div>
       <div>

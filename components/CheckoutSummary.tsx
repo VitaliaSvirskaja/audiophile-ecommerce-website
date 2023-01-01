@@ -5,9 +5,10 @@ import { Price } from "./Price";
 
 interface Props {
   onPurchase: () => void;
+  canPurchase: boolean;
 }
 
-export const CheckoutSummary = ({ onPurchase }: Props) => {
+export const CheckoutSummary = ({ onPurchase, canPurchase }: Props) => {
   const { items, totalPrice, VAT } = useCartContext();
 
   return (
@@ -33,7 +34,7 @@ export const CheckoutSummary = ({ onPurchase }: Props) => {
       <Button
         className="w-full disabled:bg-gray-300"
         onClick={onPurchase}
-        disabled={totalPrice <= 0}
+        disabled={totalPrice <= 0 || !canPurchase}
       >
         continue & pay
       </Button>
