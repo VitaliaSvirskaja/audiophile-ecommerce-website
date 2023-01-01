@@ -29,9 +29,7 @@ export const Checkout = () => {
   } = useForm<Inputs>({ mode: "all" });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log("Banana");
     console.log(data);
-    console.log(data.address);
   };
 
   function handleCloseModal() {
