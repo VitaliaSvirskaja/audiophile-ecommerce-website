@@ -7,35 +7,10 @@ import { Popover, Transition } from "@headlessui/react";
 import { NavLink } from "./NavLink";
 import { Categories } from "./Categories";
 import { useCartContext } from "../context/CartContext";
-import { useEffect, useRef } from "react";
 import { Cart } from "./Cart";
 
 export const Header = () => {
-  const openPanelRef = useRef<HTMLButtonElement | null>(null);
-  const { totalAmount } = useCartContext();
-
-  useEffect(() => {
-    function closeCart() {
-      isCartOpen = false;
-    }
-    const popOverRef = openPanelRef.current;
-    let isCartOpen = false;
-    popOverRef?.addEventListener("blur", closeCart);
-    openPanelRef.current?.click();
-    isCartOpen = true;
-
-    const closeCartTimer = setTimeout(() => {
-      if (isCartOpen) {
-        openPanelRef.current?.click();
-        isCartOpen = false;
-      }
-    }, 3000);
-
-    return () => {
-      popOverRef?.removeEventListener("blur", closeCart);
-      clearTimeout(closeCartTimer);
-    };
-  }, [totalAmount]);
+  const { totalAmount, cartPanelRef } = useCartContext();
 
   return (
     <div className="sticky top-0 z-20 w-full bg-almost-black px-6 sm:px-10">
@@ -82,7 +57,7 @@ export const Header = () => {
         {/* TODO: focus ring um cart symbol ändern*/}
         <Popover>
           <Popover.Button
-            ref={openPanelRef}
+            ref={cartPanelRef}
             className="focus-ring indicator flex items-center p-2"
             aria-label="cart"
           >

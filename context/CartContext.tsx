@@ -1,4 +1,11 @@
-import { createContext, PropsWithChildren, useContext, useState } from "react";
+import React, {
+  createContext,
+  MutableRefObject,
+  PropsWithChildren,
+  useContext,
+  useRef,
+  useState,
+} from "react";
 
 export interface Item {
   slug: string;
@@ -19,6 +26,7 @@ interface CartContextInterface {
   totalAmount: number;
   totalPrice: number;
   VAT: number;
+  cartPanelRef: MutableRefObject<HTMLButtonElement | null> | undefined;
 }
 const cartContext = createContext<CartContextInterface>({
   items: [],
@@ -28,9 +36,11 @@ const cartContext = createContext<CartContextInterface>({
   totalAmount: 0,
   totalPrice: 0,
   VAT: 0,
+  cartPanelRef: undefined,
 });
 
 export function CartContextProvider({ children }: PropsWithChildren) {
+  const cartPanelRef = useRef<HTMLButtonElement | null>(null);
   const [cartItems, setCartItems] = useState<Array<Item>>([]);
   const itemsAmountArray = cartItems.map((item) => item.quantity);
   const totalAmount = itemsAmountArray.reduce(
@@ -55,6 +65,23 @@ export function CartContextProvider({ children }: PropsWithChildren) {
       return cartItem.slug !== slug;
     });
     setCartItems(updatedCartItems);
+  }
+
+  function openCart() {
+    let isCartOpen = false;
+    cartPanelRef.current?.click();
+    isCartOpen = true;
+    setTimeout(() => {
+      if (isCartOpen) {
+        cartPanelRef.current?.click();
+        isCartOpen = false;
+      }
+    }, 3000);
+    if (cartPanelRef.current !== null) {
+      cartPanelRef.current.onblur = () => {
+        isCartOpen = false;
+      };
+    }
   }
 
   function updateCart(
@@ -88,11 +115,13 @@ export function CartContextProvider({ children }: PropsWithChildren) {
       const newItems = [...cartItems, newItem];
       setCartItems(newItems);
     }
+    openCart();
   }
 
   return (
     <cartContext.Provider
       value={{
+        cartPanelRef: cartPanelRef,
         items: cartItems,
         updateCart: updateCart,
         removeAll: removeAll,
