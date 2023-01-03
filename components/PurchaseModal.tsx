@@ -22,8 +22,11 @@ export const PurchaseModal = ({ isOpen, close }: Props) => {
       {/* Full-screen container to center the panel */}
       <div className="fixed inset-0 flex items-center justify-center p-4">
         {/* The actual dialog panel  */}
-        <Dialog.Panel className="mx-auto  rounded bg-white">
-          <div className="flex flex-col gap-6 rounded-lg bg-white p-6 sm:gap-8 sm:p-12">
+        <Dialog.Panel className="mx-auto rounded bg-white">
+          <div
+            className="flex flex-col gap-6 rounded-lg bg-white p-6 sm:gap-8 sm:p-12"
+            id="purchase modal"
+          >
             <div>
               <Image src={purchase} alt="" />
             </div>
