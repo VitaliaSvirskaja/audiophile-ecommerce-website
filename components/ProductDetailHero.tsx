@@ -5,16 +5,13 @@ import { currencyFormatter } from "../utils/currencyFormatter";
 import { useCartContext } from "../context/CartContext";
 
 interface Props {
-  product: Product | undefined;
+  product: Product;
 }
 
 export const ProductDetailHero = ({ product }: Props) => {
   const { updateCart } = useCartContext();
 
   function handleAddToCart(amount: number) {
-    if (product === undefined) {
-      return;
-    }
     updateCart(amount, product.slug, product.price, product.name);
   }
 

@@ -16,9 +16,11 @@ export default function ProductComponent() {
   const [data, setData] = useState<Product>();
 
   const features = data?.features.split("\n\n");
-  console.log(features);
 
   useEffect(() => {
+    if (productSlug === undefined) {
+      return;
+    }
     fetch("/api/products/" + productSlug)
       .then((response) => response.json())
       .then(setData);
@@ -37,7 +39,7 @@ export default function ProductComponent() {
             Go Back
           </button>
         </div>
-        <ProductDetailHero product={data} />
+        {data && <ProductDetailHero product={data} />}
         <div className="m-auto my-20 flex max-w-screen-xl gap-10 max-lg:flex-col sm:my-32 sm:gap-28 lg:my-40 lg:justify-between">
           <div className="flex flex-col gap-6 sm:gap-8 lg:max-w-2xl">
             <p className="h3">Features</p>
