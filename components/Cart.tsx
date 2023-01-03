@@ -8,7 +8,10 @@ export const Cart = () => {
   const { totalAmount, items, totalPrice, removeAll } = useCartContext();
 
   return (
-    <div className="m-auto flex max-w-lg flex-col gap-6 rounded-lg">
+    <div
+      className="m-auto flex max-w-lg flex-col gap-6 rounded-lg"
+      aria-label="cart"
+    >
       <div className="flex flex-col gap-8">
         <div className="flex justify-between gap-20">
           <p className="h6 w-full whitespace-nowrap">cart ({totalAmount})</p>

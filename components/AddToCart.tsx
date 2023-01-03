@@ -31,6 +31,7 @@ export const AddToCart = ({ onAddToCart }: Props) => {
       </div>
       <Button
         className="m-0"
+        aria-label="addToCart"
         onClick={() => {
           return onAddToCart(counter);
         }}

@@ -63,7 +63,10 @@ export const Header = () => {
           >
             <Image src={cart} alt="" width={23} height={20} />
             {totalAmount > 0 && (
-              <span className="indicator-item badge badge-secondary relative left-1 bottom-3 rounded-full bg-sepia px-1.5 text-sm font-semibold">
+              <span
+                className="indicator-item badge badge-secondary relative left-1 bottom-3 rounded-full bg-sepia px-1.5 text-sm font-semibold"
+                title="itemsAmount"
+              >
                 {totalAmount}
               </span>
             )}

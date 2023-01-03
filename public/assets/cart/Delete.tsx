@@ -13,6 +13,7 @@ export const Delete = ({
       stroke="currentColor"
       width={24}
       height={24}
+      aria-label="deleteItem"
       className={`opacity-50 hover:text-sepia active:text-fuchsia ${className}`}
       {...svgProps}
     >
