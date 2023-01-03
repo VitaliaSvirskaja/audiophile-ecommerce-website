@@ -7,28 +7,28 @@ describe("header", () => {
   });
 
   it("should open the cart", () => {
-    cy.get("[aria-label='cart']").click().parent().contains("Cart");
+    cy.get("[aria-label='cart']").click().parent().contains("cart");
   });
 
   it("should open the headphones category page", () => {
     cy.get("nav").contains("Headphones").click();
     cy.wait(100);
     cy.url().should("include", "/category/headphones");
-    cy.get("main").contains("h1", "HEADPHONES");
+    cy.get("main").children().first().contains("headphones");
   });
 
   it("should open the speakers category page", () => {
     cy.get("nav").contains("Speakers").click();
     cy.wait(100);
     cy.url().should("include", "/category/speakers");
-    cy.get("main").contains("h1", "SPEAKERS");
+    cy.get("main").children().first().contains("speakers");
   });
 
   it("should open the earphones category page", () => {
     cy.get("nav").contains("Earphones").click();
     cy.wait(100);
     cy.url().should("include", "/category/earphones");
-    cy.get("main").contains("h1", "EARPHONES");
+    cy.get("main").children().first().contains("earphones");
   });
 
   it("should open the home page", () => {

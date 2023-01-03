@@ -23,21 +23,21 @@ describe("footer", () => {
     cy.get("footer").contains("Headphones").click();
     cy.wait(100);
     cy.url().should("include", "/category/headphones");
-    cy.get("main").contains("h1", "HEADPHONES");
+    cy.get("main").children().first().contains("headphones");
   });
 
   it("should open the speakers category page", () => {
     cy.get("footer").contains("Speakers").click();
     cy.wait(100);
     cy.url().should("include", "/category/speakers");
-    cy.get("main").contains("h1", "SPEAKERS");
+    cy.get("main").children().first().contains("speakers");
   });
 
   it("should open the earphones category page", () => {
     cy.get("footer").contains("Earphones").click();
     cy.wait(100);
     cy.url().should("include", "/category/earphones");
-    cy.get("main").contains("h1", "EARPHONES");
+    cy.get("main").children().first().contains("earphones");
   });
 
   it("should contain the description", () => {
